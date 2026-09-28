@@ -77,7 +77,7 @@ body {
     color: #ffffff;
 }
 
-/* Bagian Menu Bergaya Aplikasi */
+/* Bagian Menu */
 .menu-section {
     padding: 30px 20px;
 }
@@ -91,60 +91,46 @@ body {
 .menu-grid {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
 }
 
 .menu-card {
     background: white;
-    padding: 12px;
+    padding: 15px;
     border-radius: 12px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 15px;
-}
-
-.menu-img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 8px;
-    flex-shrink: 0;
-}
-
-.menu-info {
-    flex-grow: 1;
 }
 
 .menu-info h3 {
-    margin: 0 0 4px 0;
-    font-size: 0.95rem;
+    margin: 0 0 5px 0;
+    font-size: 1rem;
     color: #222;
 }
 
 .desc {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: #666;
-    margin: 0 0 6px 0;
-    line-height: 1.2;
+    margin: 0 0 8px 0;
 }
 
 .price {
     font-weight: bold;
     color: #0052cc;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 .order-link {
     background-color: #e6f0ff;
     color: #0052cc;
-    padding: 8px 12px;
+    padding: 8px 14px;
     border-radius: 20px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     white-space: nowrap;
-    align-self: center;
 }
 
 .order-link:hover {
