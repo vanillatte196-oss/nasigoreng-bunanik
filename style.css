@@ -1,129 +1,156 @@
-/* Pengaturan Dasar Tampilan */
+/* Pengaturan Dasar */
 body {
-    font-family: Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #f4f6f8;
     color: #333;
 }
 
 .container {
     width: 90%;
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
-    text-align: center;
 }
 
-/* Bagian Hero / Atas */
-.hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80');
-    background-size: cover;
-    background-position: center;
+/* Header ala GoFood */
+.gofood-header {
+    background: linear-gradient(135deg, #00aa13, #008810);
     color: white;
-    padding: 60px 20px;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 170, 19, 0.2);
 }
 
-.hero h1 {
-    margin: 0 0 10px 0;
-    font-size: 2.2rem;
+.badge-partner {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.gofood-header h1 {
+    margin: 15px 0 5px 0;
+    font-size: 1.8rem;
 }
 
 .location {
-    font-size: 1.1rem;
-    color: #ffcc00;
-    margin-bottom: 15px;
+    font-size: 0.95rem;
+    color: #e8f5e9;
+    margin-bottom: 10px;
 }
 
 .tagline {
-    font-size: 1rem;
-    margin-bottom: 25px;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
 }
 
-/* Tombol Aksi (CTA) */
+/* Tombol Aksi */
 .cta-buttons {
     display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .btn {
-    display: inline-block;
-    padding: 12px 24px;
-    border-radius: 5px;
+    display: block;
+    padding: 12px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    color: white;
-    transition: 0.3s;
+    text-align: center;
+    font-size: 0.95rem;
 }
 
-.gofood {
-    background-color: #00aa13; /* Warna khas Gojek */
+.gofood-btn {
+    background-color: #ffffff;
+    color: #00aa13;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.gofood:hover {
-    background-color: #008810;
+.wa-btn {
+    background-color: #25d366;
+    color: #ffffff;
 }
 
-.whatsapp {
-    background-color: #25d366; /* Warna khas WhatsApp */
-}
-
-.whatsapp:hover {
-    background-color: #1ebe5d;
-}
-
-/* Bagian Menu */
+/* Bagian Menu Ala Aplikasi */
 .menu-section {
-    padding: 40px 20px;
+    padding: 30px 20px;
 }
 
 .menu-section h2 {
-    margin-bottom: 30px;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
     color: #222;
 }
 
 .menu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .menu-card {
     background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: left;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.menu-card h3 {
-    margin-top: 0;
-    color: #d32f2f;
+.menu-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 1rem;
+    color: #222;
 }
 
 .desc {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #666;
-    height: 40px;
+    margin: 0 0 8px 0;
 }
 
 .price {
     font-weight: bold;
-    color: #2e7d32;
-    font-size: 1.1rem;
+    color: #00aa13;
+    font-size: 0.95rem;
 }
 
-/* Bagian Footer */
-.footer-section {
-    background-color: #222;
+.order-link {
+    background-color: #e8f5e9;
+    color: #00aa13;
+    padding: 8px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.order-link:hover {
+    background-color: #00aa13;
     color: white;
-    padding: 30px 20px;
-    font-size: 0.9rem;
+}
+
+/* Footer */
+.footer-section {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #666;
+    border-top: 1px solid #eee;
+    margin-top: 20px;
 }
 
 .copy {
-    color: #888;
-    margin-top: 15px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+    color: #999;
+    margin-top: 10px;
 }
