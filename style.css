@@ -13,15 +13,15 @@ body {
     margin: 0 auto;
 }
 
-/* Header ala GoFood */
+/* Header dengan Tema Biru */
 .gofood-header {
-    background: linear-gradient(135deg, #00aa13, #008810);
+    background: linear-gradient(135deg, #0066ff, #0043b3);
     color: white;
     padding: 40px 20px;
     text-align: center;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 170, 19, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 102, 255, 0.2);
 }
 
 .badge-partner {
@@ -39,7 +39,7 @@ body {
 
 .location {
     font-size: 0.95rem;
-    color: #e8f5e9;
+    color: #e6f0ff;
     margin-bottom: 10px;
 }
 
@@ -68,7 +68,7 @@ body {
 
 .gofood-btn {
     background-color: #ffffff;
-    color: #00aa13;
+    color: #0052cc;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -77,7 +77,7 @@ body {
     color: #ffffff;
 }
 
-/* Bagian Menu Ala Aplikasi */
+/* Bagian Menu Bergaya Aplikasi */
 .menu-section {
     padding: 30px 20px;
 }
@@ -91,50 +91,64 @@ body {
 .menu-grid {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 15px;
 }
 
 .menu-card {
     background: white;
-    padding: 15px;
+    padding: 12px;
     border-radius: 12px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 15px;
+}
+
+.menu-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.menu-info {
+    flex-grow: 1;
 }
 
 .menu-info h3 {
-    margin: 0 0 5px 0;
-    font-size: 1rem;
+    margin: 0 0 4px 0;
+    font-size: 0.95rem;
     color: #222;
 }
 
 .desc {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: #666;
-    margin: 0 0 8px 0;
+    margin: 0 0 6px 0;
+    line-height: 1.2;
 }
 
 .price {
     font-weight: bold;
-    color: #00aa13;
-    font-size: 0.95rem;
+    color: #0052cc;
+    font-size: 0.9rem;
 }
 
 .order-link {
-    background-color: #e8f5e9;
-    color: #00aa13;
-    padding: 8px 14px;
+    background-color: #e6f0ff;
+    color: #0052cc;
+    padding: 8px 12px;
     border-radius: 20px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     white-space: nowrap;
+    align-self: center;
 }
 
 .order-link:hover {
-    background-color: #00aa13;
+    background-color: #0052cc;
     color: white;
 }
 
