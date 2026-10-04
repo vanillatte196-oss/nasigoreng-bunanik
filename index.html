@@ -1,60 +1,210 @@
-<!-- Floating Cart Button (Tombol Keranjang) -->
-<div class="floating-cart" onclick="openCartModal()">
-  🛒 Keranjang (<span id="cart-count">0</span>)
-</div>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warung Nasi Goreng Bu Nanik - Ungaran Barat</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-<!-- Modal Formulir Pemesanan -->
-<div id="cartModal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeCartModal()">&times;</span>
-    <h2>🛒 Rincian Pemesanan</h2>
-    
-    <!-- Ringkasan Item -->
-    <div id="cart-items-list">
-      <p class="empty-msg">Keranjang belanja masih kosong.</p>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">🍛 Bu Nanik</div>
+    <div class="nav-links">
+      <a href="#menu" class="nav-link">Menu</a>
+      <a href="#lokasi" class="nav-link">Lokasi</a>
+      <button class="nav-cart-btn" onclick="openCartModal()">
+        🛒 Keranjang (<span id="nav-cart-count">0</span>)
+      </button>
     </div>
+  </nav>
 
-    <div class="total-box">
-      <strong>Total: </strong><span id="cart-total-price">Rp 0</span>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="badge">Ungaran Barat</span>
+      <h1>Nasi Goreng Bu Nanik</h1>
+      <p>Cita rasa khas, bumbu meresap, dan porsi memuaskan. Pesan langsung untuk diantar ke rumahmu!</p>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn-primary">Pesan Online Sekarang</a>
+        <a href="HTTPS_LINK_GOFOOD_ANDA_DISINI" target="_blank" class="btn-gofood">Order via GoFood</a>
+      </div>
     </div>
+  </section>
 
-    <hr>
+  <!-- Menu Section -->
+  <section id="menu" class="section">
+    <h2>Menu Favorit Bu Nanik</h2>
+    <p class="section-subtitle">Klik "+ Tambah" pada menu yang ingin Anda pesan</p>
 
-    <!-- Form Data Pembeli -->
-    <h3>Formulir Pengiriman</h3>
-    <form id="orderForm" onsubmit="sendOrderToWA(event)">
-      <div class="form-group">
-        <label>Nama Lengkap *</label>
-        <input type="text" id="cust-name" required placeholder="Contoh: Budi">
+    <div class="menu-grid">
+      
+      <!-- Item Menu 1 -->
+      <div class="menu-card">
+        <div class="card-badge bestseller">🔥 Best Seller</div>
+        <div class="menu-img-placeholder">🍛</div>
+        <div class="menu-info">
+          <h3>Nasi Goreng Babat Gongso</h3>
+          <p class="menu-desc">Babat sapi empuk disiram bumbu gongso khas manis gurih.</p>
+          <div class="menu-price-action">
+            <span class="price">Rp 22.000</span>
+            <button class="btn-add-cart" onclick="addToCart('Nasi Goreng Babat Gongso', 22000)">+ Tambah</button>
+          </div>
+        </div>
       </div>
 
-      <div class="form-group">
-        <label>Alamat Lengkap Pengiriman (Ungaran Barat) *</label>
-        <textarea id="cust-address" rows="2" required placeholder="Jl. Pemuda No. 12, RT 02/RW 03..."></textarea>
+      <!-- Item Menu 2 -->
+      <div class="menu-card">
+        <div class="card-badge favorit">⭐ Favorit</div>
+        <div class="menu-img-placeholder">🍳</div>
+        <div class="menu-info">
+          <h3>Nasi Goreng Ayam + Telur</h3>
+          <p class="menu-desc">Nasi goreng racikan spesial dengan suwiran ayam & telur.</p>
+          <div class="menu-price-action">
+            <span class="price">Rp 18.000</span>
+            <button class="btn-add-cart" onclick="addToCart('Nasi Goreng Ayam + Telur', 18000)">+ Tambah</button>
+          </div>
+        </div>
       </div>
 
-      <div class="form-group">
-        <label>Metode Pembayaran *</label>
-        <select id="payment-method" required onchange="togglePaymentInfo()">
-          <option value="QRIS">QRIS (BCA, Mandiri, GoPay, OVO, ShopeePay)</option>
-          <option value="Transfer Bank BCA">Transfer Bank BCA</option>
-          <option value="COD / Cash">Bayar di Tempat (COD)</option>
-        </select>
+      <!-- Item Menu 3 -->
+      <div class="menu-card">
+        <div class="menu-img-placeholder">🍜</div>
+        <div class="menu-info">
+          <h3>Mie Goreng / Rebus Spesial</h3>
+          <p class="menu-desc">Mie kenyal ditumis dengan sayur segar, bakso, dan suwiran ayam.</p>
+          <div class="menu-price-action">
+            <span class="price">Rp 18.000</span>
+            <button class="btn-add-cart" onclick="addToCart('Mie Goreng Spesial', 18000)">+ Tambah</button>
+          </div>
+        </div>
       </div>
 
-      <!-- Info Rekening/QRIS (Tampil Sesuai Pilihan) -->
-      <div id="payment-info-box" class="payment-info">
-        <p><strong>Info Pembayaran:</strong></p>
-        <p id="payment-detail">Scan QRIS saat WhatsApp terhubung / transfer ke BCA 123456789 a.n Bu Nanik.</p>
+      <!-- Item Menu 4 -->
+      <div class="menu-card">
+        <div class="menu-img-placeholder">🥘</div>
+        <div class="menu-info">
+          <h3>Babat Gongso Spesial (Tanpa Nasi)</h3>
+          <p class="menu-desc">Tumisan babat empuk dengan kecap rempah pekat dan cabai pilihan.</p>
+          <div class="menu-price-action">
+            <span class="price">Rp 30.000</span>
+            <button class="btn-add-cart" onclick="addToCart('Babat Gongso Spesial', 30000)">+ Tambah</button>
+          </div>
+        </div>
       </div>
 
-      <div class="form-group">
-        <label>Catatan Tambahan (Opsional)</label>
-        <input type="text" id="cust-notes" placeholder="Misal: Jangan terlalu pedas">
+      <!-- Item Menu 5 -->
+      <div class="menu-card">
+        <div class="menu-img-placeholder">🥤</div>
+        <div class="menu-info">
+          <h3>Es Teh Manis / Hangat</h3>
+          <p class="menu-desc">Teh segar penyegar dahaga setelah menikmati nasi goreng pedas.</p>
+          <div class="menu-price-action">
+            <span class="price">Rp 5.000</span>
+            <button class="btn-add-cart" onclick="addToCart('Es Teh Manis', 5000)">+ Tambah</button>
+          </div>
+        </div>
       </div>
 
-      <button type="submit" class="btn-submit-order">📱 Kirim Pesanan via WhatsApp</button>
-    </form>
+      <!-- Item Menu 6 -->
+      <div class="menu-card">
+        <div class="menu-img-placeholder">🍊</div>
+        <div class="menu-info">
+          <h3>Es Jeruk / Jeruk Hangat</h3>
+          <p class="menu-desc">Minuman perasan jeruk asli manis dan segar.</p>
+          <div class="menu-price-action">
+            <span class="price">Rp 6.000</span>
+            <button class="btn-add-cart" onclick="addToCart('Es Jeruk', 6000)">+ Tambah</button>
+          </div>
+        </div>
+      </div>
 
+    </div>
+  </section>
+
+  <!-- Lokasi & Kontak Section -->
+  <section id="lokasi" class="section bg-light">
+    <h2>Lokasi & Informasi Warung</h2>
+    <div class="info-box">
+      <p><strong>📍 Alamat:</strong> Ungaran Barat, Kabupaten Semarang (Wilayah Ungaran Barat & Sekitarnya)</p>
+      <p><strong>⏰ Jam Operasional:</strong> Setiap Hari (16.30 - 23.00 WIB)</p>
+      <p><strong>📱 WhatsApp Layanan:</strong> 0812-3456-7890</p>
+      <div class="action-buttons">
+        <a href="HTTPS_LINK_GOOGLE_MAPS_ANDA" target="_blank" class="btn-secondary">Petunjuk Google Maps</a>
+        <a href="HTTPS_LINK_GOFOOD_ANDA_DISINI" target="_blank" class="btn-gofood">Order via GoFood</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Cart Button (Melayang di Pojok Kanan Bawah) -->
+  <div class="floating-cart" onclick="openCartModal()">
+    🛒 Keranjang (<span id="float-cart-count">0</span>)
   </div>
-</div>
+
+  <!-- Modal Checkout / Formulir Pemesanan -->
+  <div id="cartModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeCartModal()">&times;</span>
+      <h2>🛒 Form Pemesanan Online</h2>
+      <p class="modal-subtitle">Isi rincian pengiriman untuk mengirimkan order langsung ke WhatsApp Bu Nanik.</p>
+      
+      <!-- List Belanjaan -->
+      <div class="cart-summary">
+        <h3>Daftar Pesanan:</h3>
+        <div id="cart-items-list">
+          <p class="empty-msg">Keranjang belanja Anda masih kosong.</p>
+        </div>
+        <div class="total-row">
+          <span>Total Pembayaran:</span>
+          <strong id="cart-total-price">Rp 0</strong>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <!-- Form Data Pengiriman -->
+      <form id="orderForm" onsubmit="sendOrderToWA(event)">
+        <div class="form-group">
+          <label for="cust-name">Nama Pemesan *</label>
+          <input type="text" id="cust-name" required placeholder="Contoh: Budi Santoso">
+        </div>
+
+        <div class="form-group">
+          <label for="cust-address">Alamat Pengiriman (Ungaran Barat) *</label>
+          <textarea id="cust-address" rows="2" required placeholder="Contoh: Jl. Pemuda No. 45, RT 02/RW 03, Ungaran Barat (Dekat Masjid)"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="payment-method">Metode Pembayaran *</label>
+          <select id="payment-method" required onchange="updatePaymentInfo()">
+            <option value="QRIS / E-Wallet">QRIS (Gopay, OVO, ShopeePay, Dana, BCA)</option>
+            <option value="Transfer Bank BCA">Transfer Bank BCA</option>
+            <option value="Tunai / COD">Bayar Tunai di Tempat (COD)</option>
+          </select>
+        </div>
+
+        <div id="payment-info" class="payment-info-box">
+          📌 <em>Info Pembayaran: QRIS akan dikirimkan melalui pesan WhatsApp setelah pesanan dikonfirmasi.</em>
+        </div>
+
+        <div class="form-group">
+          <label for="cust-notes">Catatan Pesanan (Opsional)</label>
+          <input type="text" id="cust-notes" placeholder="Contoh: Nasi goreng pedas sedang, es teh manisnya dikit">
+        </div>
+
+        <button type="submit" class="btn-submit-wa">📱 Kirim Pesanan via WhatsApp</button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Warung Nasi Goreng Bu Nanik Ungaran Barat. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

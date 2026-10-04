@@ -1,16 +1,255 @@
-/* Floating Cart Button */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  color: #333;
+  background-color: #fafafa;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 8%;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #d32f2f;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+}
+
+.nav-cart-btn {
+  background: #25d366;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1603133872878-684f208fb84b?q=80&w=1000') center/cover;
+  color: white;
+  text-align: center;
+  padding: 90px 20px;
+}
+
+.badge {
+  background: #ff9800;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin: 15px 0;
+}
+
+.hero p {
+  max-width: 550px;
+  margin: 0 auto 25px;
+  color: #eee;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background-color: #d32f2f;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.btn-gofood {
+  background-color: #00aa13;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* Section Common */
+.section {
+  padding: 50px 8%;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  color: #111;
+  margin-bottom: 6px;
+}
+
+.section-subtitle {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 35px;
+}
+
+.bg-light {
+  background-color: #f0f0f0;
+}
+
+/* Menu Grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.menu-card {
+  position: relative;
+  background: white;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: white;
+}
+
+.card-badge.bestseller { background: #e53935; }
+.card-badge.favorit { background: #8e24aa; }
+
+.menu-img-placeholder {
+  font-size: 3rem;
+  text-align: center;
+  background: #fff8e1;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.menu-info h3 {
+  font-size: 1.1rem;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+.menu-desc {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.menu-price-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.price {
+  font-weight: 700;
+  color: #d32f2f;
+  font-size: 1.1rem;
+}
+
+.btn-add-cart {
+  background-color: #25d366;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-add-cart:hover {
+  background-color: #1eb956;
+}
+
+/* Info Box */
+.info-box {
+  background: white;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 14px;
+  text-align: left;
+  line-height: 1.8;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+}
+
+.action-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-secondary {
+  background-color: #444;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Floating Cart */
 .floating-cart {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #00aa13;
+  bottom: 25px;
+  right: 25px;
+  background: #25d366;
   color: white;
-  padding: 12px 20px;
+  padding: 14px 22px;
   border-radius: 30px;
   font-weight: 700;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
   cursor: pointer;
-  z-index: 999;
+  z-index: 99;
 }
 
 /* Modal Popup */
@@ -25,10 +264,10 @@
 
 .modal-content {
   background: white;
-  margin: 5% auto;
+  margin: 4% auto;
   padding: 25px;
-  width: 90%;
-  max-width: 500px;
+  width: 92%;
+  max-width: 520px;
   border-radius: 16px;
   position: relative;
 }
@@ -38,9 +277,59 @@
   top: 15px; right: 20px;
   font-size: 1.8rem;
   cursor: pointer;
+  color: #888;
 }
 
-/* Form Styles */
+.modal-subtitle {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.cart-summary {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.cart-summary h3 {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.cart-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.88rem;
+  padding: 6px 0;
+  border-bottom: 1px dashed #ddd;
+}
+
+.btn-remove {
+  background: none;
+  border: none;
+  color: #e53935;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 1rem;
+  color: #d32f2f;
+}
+
+.divider {
+  margin: 15px 0;
+  border: none;
+  border-top: 1px solid #eee;
+}
+
+/* Form Styling */
 .form-group {
   margin-bottom: 12px;
   text-align: left;
@@ -61,9 +350,18 @@
   font-size: 0.9rem;
 }
 
-.btn-submit-order {
+.payment-info-box {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  margin-bottom: 15px;
+}
+
+.btn-submit-wa {
   width: 100%;
-  background: #25d366; /* Warna WhatsApp */
+  background: #25d366;
   color: white;
   border: none;
   padding: 14px;
@@ -71,17 +369,17 @@
   font-weight: 700;
   font-size: 1rem;
   cursor: pointer;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
-.cart-item-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 0;
-  border-bottom: 1px border #eee;
+.btn-submit-wa:hover {
+  background: #1eb956;
 }
 
-.btn-remove {
-  background: none; border: none; cursor: pointer;
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: #aaa;
+  font-size: 0.8rem;
 }
