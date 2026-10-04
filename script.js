@@ -1,5 +1,5 @@
-// Ganti dengan nomor WhatsApp Bu Nanik (Format: 628xxxxxxxxxx tanpa angka 0 di depan)
-const PHONE_NUMBER = "85875559317";
+// Nomor WhatsApp Bu Nanik (menggunakan format 62)
+const PHONE_NUMBER = "6285875559317";
 
 let cart = [];
 
@@ -62,8 +62,10 @@ function updatePaymentInfo() {
   const method = document.getElementById("payment-method").value;
   const infoBox = document.getElementById("payment-info");
 
-  if (method === "Transfer Bank BCA") 
-   else if (method === "Tunai / COD") {
+  if (method === "Transfer Bank BCA") {
+    infoBox.innerHTML =
+      "📌 <em>Transfer ke Rekening BCA: <strong>123-456-7890</strong> a.n. Bu Nanik.</em>";
+  } else if (method === "Tunai / COD") {
     infoBox.innerHTML =
       "📌 <em>Pembayaran dilakukan secara tunai kepada kurir saat makanan sampai.</em>";
   } else {
