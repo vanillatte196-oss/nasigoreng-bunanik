@@ -1,156 +1,180 @@
-/* Pengaturan Dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f6f8;
-    color: #333;
+  color: #333;
+  background-color: #fafafa;
 }
 
-.container {
-    width: 90%;
-    max-width: 600px;
-    margin: 0 auto;
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 8%;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-/* Header dengan Tema Biru */
-.gofood-header {
-    background: linear-gradient(135deg, #0066ff, #0043b3);
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 102, 255, 0.2);
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #d32f2f;
 }
 
-.badge-partner {
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: bold;
+.nav-link {
+  text-decoration: none;
+  color: #555;
+  margin-left: 20px;
+  font-weight: 600;
 }
 
-.gofood-header h1 {
-    margin: 15px 0 5px 0;
-    font-size: 1.8rem;
+/* Hero Section */
+.hero {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://images.unsplash.com/photo-1603133872878-684f208fb84b?q=80&w=1000")
+      center/cover;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
 }
 
-.location {
-    font-size: 0.95rem;
-    color: #e6f0ff;
-    margin-bottom: 10px;
+.badge {
+  background: #ff9800;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
-.tagline {
-    font-size: 0.9rem;
-    opacity: 0.9;
-    margin-bottom: 20px;
+.hero h1 {
+  font-size: 2.3rem;
+  margin: 15px 0;
 }
 
-/* Tombol Aksi */
-.cta-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.hero p {
+  max-width: 500px;
+  margin: 0 auto 25px;
+  color: #ddd;
 }
 
-.btn {
-    display: block;
-    padding: 12px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
-    font-size: 0.95rem;
+/* Button GoFood Style */
+.btn-gofood {
+  display: inline-block;
+  background-color: #00aa13; /* Warna Khas Gojek/GoFood */
+  color: white;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition:
+    transform 0.2s,
+    background 0.2s;
 }
 
-.gofood-btn {
-    background-color: #ffffff;
-    color: #0052cc;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.btn-gofood:hover {
+  background-color: #008a0f;
+  transform: translateY(-2px);
 }
 
-.wa-btn {
-    background-color: #25d366;
-    color: #ffffff;
+.btn-secondary {
+  display: inline-block;
+  background-color: #444;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 10px;
 }
 
-/* Bagian Menu */
-.menu-section {
-    padding: 30px 20px;
+/* Section Common */
+.section {
+  padding: 50px 8%;
+  text-align: center;
 }
 
-.menu-section h2 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    color: #222;
+.section h2 {
+  margin-bottom: 30px;
+  color: #111;
 }
 
+.bg-light {
+  background-color: #f0f0f0;
+}
+
+/* Menu Grid */
 .menu-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .menu-card {
-    background: white;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.menu-img-placeholder {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 15px;
+  background: #fff3e0;
+  padding: 20px;
+  border-radius: 8px;
 }
 
 .menu-info h3 {
-    margin: 0 0 5px 0;
-    font-size: 1rem;
-    color: #222;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
 }
 
-.desc {
-    font-size: 0.8rem;
-    color: #666;
-    margin: 0 0 8px 0;
+.menu-info p {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 12px;
 }
 
 .price {
-    font-weight: bold;
-    color: #0052cc;
-    font-size: 0.95rem;
+  font-weight: 700;
+  color: #d32f2f;
+  font-size: 1.05rem;
 }
 
-.order-link {
-    background-color: #e6f0ff;
-    color: #0052cc;
-    padding: 8px 14px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.85rem;
-    white-space: nowrap;
+/* Info Box */
+.info-box {
+  background: white;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: left;
+  line-height: 1.8;
 }
 
-.order-link:hover {
-    background-color: #0052cc;
-    color: white;
+.action-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-/* Footer */
-.footer-section {
-    background-color: #fff;
-    padding: 20px;
-    text-align: center;
-    font-size: 0.85rem;
-    color: #666;
-    border-top: 1px solid #eee;
-    margin-top: 20px;
-}
-
-.copy {
-    font-size: 0.75rem;
-    color: #999;
-    margin-top: 10px;
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: #aaa;
+  font-size: 0.8rem;
 }
